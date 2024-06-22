@@ -14,6 +14,22 @@
         .custom-image {
             text-align: right; /* Gambar di sebelah kanan layar */
         }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .row {
+            height: 100%;
+        }
+        .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         @media (max-width: 768px) {
             .custom-image {
                 text-align: center; /* Posisi tengah untuk layar kecil */
@@ -52,17 +68,17 @@
     </nav>
 
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-6 mt-5 custom-text">
+        <div class="row">
+            <div class="col-md-6">
                 <div class="text-start animate__animated animate__fadeIn">
                     <p>Hello I'm</p>
                     <h1>Sabdo Ilahi Dodik</h1>
                     <p>Student</p>
                 </div>
             </div>
-            <div class="col-md-6 mt-5 custom-image">
+            <div class="col-md-6">
                 <div class="text-center animate__animated animate__bounceInDown">
-                    <img src="images/2.png" class="img-fluid" alt="Illustration">
+                    <img src="images/Profile/2.png" class="img-fluid" alt="Illustration">
                 </div>
             </div>
         </div>
@@ -73,3 +89,4 @@
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+

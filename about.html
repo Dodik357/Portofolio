@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portfolio</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+        body {
+             overflow: hidden;
+        }
+
+        .custom-image {
+            text-align: right; /* Gambar di sebelah kanan layar */
+            margin-top: 40px; /* Memindahkan gambar ke atas */
+        }
+        .custom-text {
+            text-align: left; /* Teks di sebelah kiri layar */
+            margin-top: 60px; /* Memindahkan teks ke bawah */
+        }
+        .custom-skills {
+            margin-top: 60px; /* Jarak antara About dan My Skills */
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .progress {
+            margin-bottom: 10px;
+            width: 100%; /* Menyesuaikan lebar progress bar */
+        }
+        .img-fluid {
+            max-width: 100%; /* Fix gambar agar tidak tumpang tindih dengan card */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="certificates.html">Certificates</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 text-center custom-image animate__animated animate__fadeInRight">
+                <img src="images/Profile/Profile.png" class="img-fluid" alt="About Image" height="300" width="300">
+            </div>
+            <div class="col-md-6 custom-text animate__animated animate__fadeInLeft">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius mauris in est sodales, sed aliquet nisl feugiat. Mauris sit amet eros ac est dictum fringilla. Sed sit amet ante nec sem egestas tristique vel at eros.</p>
+                <p>Proin tincidunt tellus nec libero interdum, sit amet ullamcorper elit posuere. Suspendisse fringilla, ligula id fermentum eleifend, urna mi venenatis risus, a egestas lectus nunc vel eros.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5 custom-skills">
+            <div class="col-md-12">
+                <h2 class="text-center animate__animated animate__fadeIn">My Skills</h2>
+                <div class="row d-flex justify-content-around">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Programming Languages</h5>
+                                <p class="card-text">HTML/CSS - 80%</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="card-text mt-2">JavaScript - 70%</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Years of Experience</h5>
+                                <p class="card-text" id="yearsOfExperience">0</p>
+                                <p class="card-text" id="yearsOfExperience">years</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Projects</h5>
+                                <p class="card-text" id="projects"></p>
+                                <p class="card-text" >projects completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logika untuk menghitung tahun pengalaman
+        // Ambil tahun saat ini
+        const currentYear = new Date().getFullYear();
+        
+        // Tahun mulai pengalaman
+        const startYear = 2022; // Misalnya tahun mulai adalah 2020
+        
+        // Hitung tahun pengalaman berdasarkan tahun saat ini
+        const yearsOfExperience = currentYear - startYear;
+        
+        // Update teks pengalaman di dalam card
+        document.getElementById('yearsOfExperience').textContent = `${yearsOfExperience}`;
+
+        
+        // Ambil jumlah card project di page projects.html
+        const projectsCount = document.querySelectorAll('.card-project').length;
+        
+        // Update jumlah project di dalam card
+        document.getElementById('projects').textContent = `${projectsCount} projects completed`;
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-z
+
